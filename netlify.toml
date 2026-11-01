@@ -1,0 +1,14 @@
+# Netlify Configuration for DataMorph Frontend
+[build]
+  base = "datamorph-frontend"
+  command = "npm run build"
+  publish = "dist/datamorph-frontend/browser"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA Fallback: Routes all frontend routes to index.html for Angular Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
